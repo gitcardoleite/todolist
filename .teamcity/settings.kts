@@ -35,12 +35,14 @@ project {
 object Build : BuildType({
     name = "Build"
 
+
     vcs {
         root(DslContext.settingsRoot)
     }
 
     steps {
         maven {
+            name = "my custom test"
             id = "Maven2"
             goals = "clean test"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
